@@ -1,13 +1,10 @@
-FROM python:3.9.0
+FROM python:3.9-slim
 
 WORKDIR /app
 
-COPY . .
+COPY a.txt ./
+RUN pip install --no-cache-dir -r a.txt
 
-# pip, setuptools, wheel 최신 버전으로 업그레이드
-RUN python -m pip install --upgrade pip setuptools wheel
+COPY src/ ./src/
 
-# 패키지 설치
-RUN pip install -r a.txt
-
-CMD ["python", "server.py"]
+CMD ["python", "src/server.py"]

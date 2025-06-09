@@ -1,5 +1,5 @@
-flask
-flask_socketio
-eventlet
-numpy
-tensorflow==2.9.3
+flask==2.3.3
+flask-socketio==5.3.6
+eventlet==0.33.3
+numpy<2
+tensorflow==2.11.0
